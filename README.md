@@ -60,32 +60,6 @@ Self-loop는 제거하며, 중복 간선은 하나의 간선으로 처리한다.
 - `query-query-only`: query node 사이에만 간선을 추가하는 방법
 - `query-kcore-only`: query node와 초기 $k$-core의 node 사이에만 간선을 추가하는 방법
 
-## 제안 방법
-
-각 query node $q\in Q$에 대해 현재 부족한 support의 수 $R(q)$를 관리한다.
-
-제안 방법은
-
-$C_{k-1}(G_A)\setminus C_k(G_A)$
-
-영역에서 연결된 node끼리 candidate component를 구성하고 그 내부에서 onion layer
-
-$L_1,L_2,\ldots,L_h$
-
-를 구성한다.
-
-각 layer $L_j$에 대해 candidate를 다음과 같이 정의한다.
-
-$S_i^j=\bigcup_{r=j}^{h}L_r$
-
-각 candidate는 다음 score를 이용하여 평가한다.
-
-$\mathrm{Score}_Q(S_i^j)=G_Q(S_i^j)/N_S(S_i^j)$
-
-여기서 $G_Q(S_i^j)$는 candidate 활성화를 통해 얻는 query gain이며, $NS(S_i^j)$는 $S_i^j$를 활성화하기 위해 필요한 지지의 수를 의미한다.
-
-Score의 분모는 실제로 추가되는 간선의 수가 아니라 필요한 지지의 수를 사용한다.
-
 ## Query 선택
 
 두 가지 query 선택 방법을 사용한다.
